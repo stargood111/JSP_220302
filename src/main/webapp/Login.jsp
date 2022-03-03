@@ -11,8 +11,8 @@
 		request.setCharacterEncoding("UTF-8"); //request 한글 인코딩 utf-8로 설정
 		
 		String pid = request.getParameter("id"); // id 값 가져오기
-		String ppw = request.getParameter("name");
-		String pname = request.getParameter("pw");
+		String ppw = request.getParameter("pw");
+		String pname = request.getParameter("name");
 		String pgender = request.getParameter("gender");
 		String home = request.getParameter("address");
 		String []  phobby = request.getParameterValues("hobby"); //취미가져오기 (배열로 받음)
@@ -27,16 +27,16 @@
 	* 성별 : <%= pgender %><br>
 	* 고향 : <%= home %><br> 
 	* 취미 :  
-	<%
-				if(phobby != null )
-				{
-				for (int i = 0 ; i<=phobby.lenght ; i++)
-				{
-					out.println(phobby[i]);
+		<% 
+			if(phobby != null)
+			{
+				for(int i = 0 ;i<phobby.length ; i++)
+				{				
+					out.println(" "+ phobby[i]);
 				}
-				}
-	%>
-	* 자기소개 : <%= intro %><br>
-
+			}	
+		%>
+		<br>
+		* 자기소개 : <%= intro %>  <br>
 </body>
 </html>
